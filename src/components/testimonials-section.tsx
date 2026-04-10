@@ -1,27 +1,31 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Icon from "@/components/ui/icon"
 
 const testimonials = [
   {
-    name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
+    name: "Алина Соколова",
+    role: "Фитнес-тренер, Москва",
     avatar: "/professional-woman-scientist.png",
     content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
+      "DayTrack изменил мой подход к саморазвитию. Вижу прогресс каждый день — это безумно мотивирует не останавливаться!",
+    stars: 5,
   },
   {
-    name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
+    name: "Дмитрий Козлов",
+    role: "Предприниматель, Санкт-Петербург",
     avatar: "/cybersecurity-expert-man.jpg",
     content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
+      "Наконец-то приложение, которое не надоедает. Простое, красивое и реально полезное. Стрик уже 47 дней!",
+    stars: 5,
   },
   {
-    name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
+    name: "Мария Ли",
+    role: "Студентка, Новосибирск",
     avatar: "/asian-woman-tech-developer.jpg",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "Слежу за водой, сном и учёбой — всё в одном месте. Графики реально помогают понять, где я теряю продуктивность.",
+    stars: 5,
   },
 ]
 
@@ -30,9 +34,9 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-orbitron">Что говорят пользователи</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            12 000+ человек уже улучшают свою жизнь с DayTrack каждый день
           </p>
         </div>
 
@@ -40,6 +44,11 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="glow-border slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
               <CardContent className="p-6">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: testimonial.stars }).map((_, i) => (
+                    <Icon key={i} name="Star" size={16} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
                 <p className="text-card-foreground mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                 <div className="flex items-center gap-4">
                   <Avatar>

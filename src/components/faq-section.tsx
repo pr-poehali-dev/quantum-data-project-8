@@ -3,52 +3,52 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQSection() {
   const faqs = [
     {
-      question: "Насколько безопасна процедура SynapseAI?",
+      question: "DayTrack бесплатный?",
       answer:
-        "Да, процедура выполняется прецизионным хирургическим роботом и прошла обширное тестирование. Все материалы биосовместимы и одобрены FDA для медицинского применения.",
+        "Да! Базовый функционал полностью бесплатен и навсегда. Вы можете отслеживать неограниченное количество показателей, строить графики и ставить цели без какой-либо оплаты.",
     },
     {
-      question: "Сколько длится операция?",
+      question: "Какие показатели можно отслеживать?",
       answer:
-        "Малоинвазивная процедура обычно занимает 2-3 часа и проводится под местной анестезией с седацией.",
+        "Абсолютно любые: шаги, вода, сон, настроение, вес, калории, время за экраном, медитации, чтение и многое другое. Также можно добавлять свои уникальные метрики.",
     },
     {
-      question: "Можно ли удалить устройство?",
+      question: "Мои данные в безопасности?",
       answer:
-        "Да, SynapseAI разработан полностью обратимым. Устройство можно безопасно удалить при необходимости, хотя это требуется редко.",
+        "Полностью. Все данные хранятся в зашифрованном виде. Мы никогда не передаём и не продаём личную информацию третьим лицам.",
     },
     {
-      question: "Какие ощущения при использовании SynapseAI?",
+      question: "Есть ли мобильное приложение?",
       answer:
-        "Пользователи отмечают, что управление устройствами силой мысли ощущается естественно и интуитивно после короткого периода обучения. От самого импланта нет физических ощущений.",
+        "Веб-версия отлично работает на смартфонах — просто откройте в браузере. Нативные приложения для iOS и Android в разработке.",
     },
     {
-      question: "Как долго работает батарея?",
+      question: "Можно ли экспортировать данные?",
       answer:
-        "Устройство заряжается беспроводным способом и работает полный день на одном заряде. Зарядка выполняется внешним устройством, размещаемым рядом с головой.",
+        "Да, все ваши данные доступны для экспорта в удобных форматах. Ваша статистика всегда принадлежит только вам.",
     },
     {
-      question: "Кто может получить SynapseAI?",
+      question: "Как не терять стрик и мотивацию?",
       answer:
-        "В настоящее время мы фокусируемся на людях с тяжелым параличом. Соответствие определяется через комплексную медицинскую оценку.",
+        "DayTrack отправляет умные напоминания в удобное вам время. Также есть система достижений и наград — она реально помогает не бросать начатое.",
     },
   ]
 
   return (
-    <section className="py-24 bg-black">
+    <section id="faq" className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron">Частые вопросы</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-space-mono">
-            Ответы на популярные вопросы о технологии SynapseAI, безопасности и опыте пациентов.
+            Ответы на популярные вопросы о DayTrack — как это работает и чего ожидать.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-red-500/20 mb-4">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-400 font-orbitron px-6 py-4">
+              <AccordionItem key={index} value={`item-${index}`} className="border-blue-500/20 mb-4">
+                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-blue-400 font-orbitron px-6 py-4">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300 leading-relaxed px-6 pb-4 font-space-mono">
