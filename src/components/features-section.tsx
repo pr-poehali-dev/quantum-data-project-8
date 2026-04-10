@@ -1,53 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Дневная статистика",
+    description: "Записывай ключевые показатели каждого дня: продуктивность, настроение, активность и многое другое — всё в одном месте.",
+    icon: "CalendarDays",
+    badge: "Ежедневно",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Умные графики",
+    description: "Интерактивные графики показывают твой прогресс во времени. Видишь тренды, замечаешь закономерности — растёшь осознанно.",
+    icon: "TrendingUp",
+    badge: "Аналитика",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Цели и привычки",
+    description: "Ставь цели на день, неделю или месяц. Отслеживай привычки и получай мотивацию от собственного прогресса.",
+    icon: "Target",
+    badge: "Мотивация",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
+    title: "Персональный дашборд",
+    description: "Настраивай под себя — выбирай, какие метрики важны именно тебе. Твоё приложение, твои правила.",
+    icon: "LayoutDashboard",
+    badge: "Кастом",
+  },
+  {
+    title: "Напоминания",
+    description: "Умные уведомления помогают не забыть заполнить дневник и держат тебя в курсе достижений.",
+    icon: "Bell",
     badge: "Умный",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
-  },
-  {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Экспорт данных",
+    description: "Скачивай свою статистику в любой момент. Твои данные — только твои, без ограничений.",
+    icon: "Download",
+    badge: "Свобода",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-orbitron">Всё для твоего роста</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            DayTrack объединяет всё необходимое, чтобы каждый день становился лучше предыдущего
           </p>
         </div>
 
@@ -60,15 +61,10 @@ export function FeaturesSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-violet-500/20 flex items-center justify-center">
+                    <Icon name={feature.icon} size={20} className="text-blue-400" />
+                  </div>
+                  <Badge variant="secondary" className="bg-blue-500/10 text-blue-400 border-blue-500/20">
                     {feature.badge}
                   </Badge>
                 </div>
